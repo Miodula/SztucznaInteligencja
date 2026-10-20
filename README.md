@@ -1,0 +1,2 @@
+# SztucznaInteligencja
+Semestr 5 
