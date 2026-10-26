@@ -1,0 +1,256 @@
+{
+  "questions": {
+    "Q1": {
+      "text": "Jakie jest Twoje wykształcenie?",
+      "answers": ["podstawowe", "średnie", "branżowe", "wyższe"]
+    },
+    "Q2": {
+      "text": "Jakie masz doświadczenie zawodowe?",
+      "answers": ["brak", "krótkie", "długie"]
+    },
+    "Q3": {
+      "text": "Gdzie mieszkasz?",
+      "answers": ["wieś", "małe_miasto", "duże_miasto"]
+    },
+    "Q4": {
+      "text": "Czy jesteś gotowy/a na dojazdy do pracy (powyżej 30km) lub relokację?",
+      "answers": ["tak", "nie"]
+    },
+    "Q5": {
+      "text": "Jaki jest Twój poziom znajomości języka angielskiego?",
+      "answers": ["brak", "podstawowa", "biegła"]
+    },
+    "Q6": {
+      "text": "Jakie są Twoje oczekiwania finansowe?",
+      "answers": ["minimalne", "średnie", "wysokie"]
+    },
+    "Q7": {
+      "text": "W jakiej grupie wiekowej jesteś?",
+      "answers": ["do_25_lat", "26_49_lat", "50_plus"]
+    },
+    "Q8": {
+      "text": "Jak często aktywnie szukasz pracy (wysyłasz CV, chodzisz na rozmowy)?",
+      "answers": ["codziennie", "rzadko", "wcale"]
+    },
+    "Q9": {
+      "text": "Jaki jest Twój poziom umiejętności cyfrowych (obsługa komputera, programy biurowe)?",
+      "answers": ["brak", "podstawowe", "zaawansowane"]
+    },
+    "Q10": {
+      "text": "Czy masz możliwość pracy w systemie zmianowym lub w weekendy?",
+      "answers": ["tak", "nie"]
+    }
+  },
+  "rules": [
+    {
+      "if": {"Q1": "podstawowe", "Q2": "brak", "Q8": "rzadko"},
+      "then": {
+        "diagnosis": "Brak kwalifikacji połączony z niską aktywnością.",
+        "action": "Zarejestruj się w Urzędzie Pracy na kursy zawodowe i zacznij wysyłać CV przynajmniej raz w tygodniu."
+      }
+    },
+    {
+      "if": {"Q1": "wyzsze", "Q2": "brak", "Q6": "wysokie"},
+      "then": {
+        "diagnosis": "Absolwent z nierealistycznymi oczekiwaniami finansowymi.",
+        "action": "Zejdź z wymagań finansowych na start. Znajdź płatny staż, aby zdobyć doświadczenie w zawodzie."
+      }
+    },
+    {
+      "if": {"Q3": "wies", "Q4": "nie", "Q9": "brak"},
+      "then": {
+        "diagnosis": "Podwójne wykluczenie: komunikacyjne i cyfrowe.",
+        "action": "Musisz zdobyć prawo jazdy lub nauczyć się obsługi komputera, by móc pracować w 100% zdalnie."
+      }
+    },
+    {
+      "if": {"Q7": "50_plus", "Q9": "brak", "Q2": "dlugie"},
+      "then": {
+        "diagnosis": "Doświadczony pracownik wykluczony technologicznie.",
+        "action": "Zapisz się na darmowy kurs obsługi komputera. Twoje wieloletnie doświadczenie musi zostać wsparte nowymi technologiami."
+      }
+    },
+    {
+      "if": {"Q1": "wyzsze", "Q5": "biegla", "Q4": "nie", "Q3": "wies"},
+      "then": {
+        "diagnosis": "Wysokie kwalifikacje blokowane przez brak mobilności.",
+        "action": "Skup się wyłącznie na ofertach pracy w pełni zdalnej (np. z zagranicy lub w korporacjach IT)."
+      }
+    },
+    {
+      "if": {"Q2": "brak", "Q7": "do_25_lat", "Q8": "rzadko"},
+      "then": {
+        "diagnosis": "Bierna postawa na początku kariery zawodowej.",
+        "action": "Zwiększ częstotliwość wysyłania CV. Młode osoby bez doświadczenia muszą nadrabiać determinacją."
+      }
+    },
+    {
+      "if": {"Q3": "duze_miasto", "Q9": "zaawansowane", "Q8": "codziennie"},
+      "then": {
+        "diagnosis": "Wysoka aktywność, ale ogromna konkurencja na rynku miejskim.",
+        "action": "Zmień sposób szukania pracy. Dopracuj portfolio i spróbuj odezwać się bezpośrednio do rekruterów na LinkedIn."
+      }
+    },
+    {
+      "if": {"Q1": "branzowe", "Q10": "nie", "Q4": "nie"},
+      "then": {
+        "diagnosis": "Pracownik fizyczny bez elastyczności czasowej i mobilności.",
+        "action": "W branżach technicznych praca zmianowa to często standard. Przemyśl, czy nie uda Ci się przeorganizować czasu na pracę w systemie 2-zmianowym."
+      }
+    },
+    {
+      "if": {"Q7": "50_plus", "Q5": "biegla", "Q2": "dlugie"},
+      "then": {
+        "diagnosis": "Senior ekspert na rynku – ryzyko bycia ocenionym jako 'zbyt drogi'.",
+        "action": "Nie aplikuj na standardowe ogłoszenia. Skup się na stanowiskach doradczych, mentoringowych lub interim management."
+      }
+    },
+    {
+      "if": {"Q1": "srednie", "Q2": "krotkie", "Q6": "wysokie"},
+      "then": {
+        "diagnosis": "Niedopasowanie oczekiwań finansowych do krótkiego stażu.",
+        "action": "Zdobywaj certyfikaty i rozwijaj się w obecnym zawodzie przez kolejne 1-2 lata, aby uzasadnić takie żądania płacowe."
+      }
+    },
+    {
+      "if": {"Q3": "male_miasto", "Q4": "tak", "Q8": "codziennie"},
+      "then": {
+        "diagnosis": "Aktywny kandydat, którego ogranicza zbyt mały, lokalny rynek.",
+        "action": "Wykorzystaj swoją mobilność. Poszerz obszar poszukiwań na sąsiednie, większe rynki pracy w promieniu 50 km."
+      }
+    },
+    {
+      "if": {"Q1": "podstawowe", "Q9": "zaawansowane", "Q5": "podstawowa"},
+      "then": {
+        "diagnosis": "Samouk technologiczny bez oficjalnych dokumentów (dyplomów).",
+        "action": "Zbuduj mocne, publiczne portfolio (np. na GitHub). W branży IT Twoje realne umiejętności cyfrowe często zastępują dyplom wyższej uczelni."
+      }
+    },
+    {
+      "if": {"Q8": "wcale", "Q6": "wysokie", "Q2": "brak"},
+      "then": {
+        "diagnosis": "Bierna postawa, czekanie na ofertę idealną bez podstaw.",
+        "action": "Praca sama nie przyjdzie. Musisz urealnić swoje wymagania finansowe i zacząć aplikować na stanowiska juniorskie."
+      }
+    },
+    {
+      "if": {"Q1": "wyzsze", "Q3": "wies", "Q10": "tak"},
+      "then": {
+        "diagnosis": "Wykształcony z mniejszymi perspektywami lokalnymi, ale elastyczny.",
+        "action": "Wykorzystaj gotowość do pracy zmianowej w centrach logistycznych w Twojej okolicy, celując w pozycje biurowe/kierownicze."
+      }
+    },
+    {
+      "if": {"Q9": "brak", "Q5": "brak", "Q1": "srednie"},
+      "then": {
+        "diagnosis": "Brak kluczowych na rynku kompetencji biurowych i komunikacyjnych.",
+        "action": "Zainwestuj w bezpłatne aplikacje do nauki języków oraz obejrzyj tutoriale z podstaw obsługi Excela i Worda na YouTube."
+      }
+    },
+    {
+      "if": {"Q7": "26_49_lat", "Q8": "codziennie", "Q2": "dlugie", "Q5": "podstawowa"},
+      "then": {
+        "diagnosis": "Zablokowany rozwój świetnego kandydata przez słaby język obcy.",
+        "action": "Masz odpowiedni wiek i doświadczenie. Skup się w 100% na intensywnej nauce angielskiego, to natychmiast odblokuje Ci dostęp do lepszych prac."
+      }
+    },
+    {
+      "if": {"Q7": "do_25_lat", "Q2": "krotkie", "Q10": "nie"},
+      "then": {
+        "diagnosis": "Młody pracownik z wysokimi oporami przed elastycznymi godzinami.",
+        "action": "Na samym początku kariery pracodawcy cenią elastyczność. Jeśli odmawiasz pracy zmianowej, zmniejszasz pulę prac o 70%."
+      }
+    },
+    {
+      "if": {"Q4": "tak", "Q5": "biegla", "Q9": "zaawansowane"},
+      "then": {
+        "diagnosis": "Idealny kandydat pod kątem twardych kompetencji, blokowany na miękko.",
+        "action": "Masz świetny profil. Problem leży w sposobie pisania CV (może odpada w systemach ATS) lub w tym, jak radzisz sobie na rozmowach rekrutacyjnych."
+      }
+    },
+    {
+      "if": {"Q1": "branzowe", "Q2": "dlugie", "Q6": "minimalne"},
+      "then": {
+        "diagnosis": "Brak świadomości własnej wartości na rynku rzemieślniczym/technicznym.",
+        "action": "Sprawdź aktualne raporty płacowe. Jako doświadczony fachowiec (np. z branży automatyki) powinieneś celować znacznie wyżej niż minimum."
+      }
+    },
+    {
+      "if": {"Q8": "rzadko", "Q9": "zaawansowane", "Q3": "duze_miasto"},
+      "then": {
+        "diagnosis": "Brak motywacji u kandydata technicznego na doskonałym rynku.",
+        "action": "Sama umiejętność obsługi systemów w dużym mieście to za mało, trzeba się o pracę postarać. Skonfiguruj sobie automatyczne alerty o pracy."
+      }
+    },
+    {
+      "if": {"Q1": "podstawowe", "Q3": "wies", "Q4": "nie"},
+      "then": {
+        "diagnosis": "Potrójna bariera: brak edukacji, oddalenie od miasta i brak mobilności.",
+        "action": "Na lokalnym wiejskim rynku pracy najemnej może nie być. Pomyśl o pracach sezonowych lub własnej mikrodziałalności rolniczo-usługowej."
+      }
+    },
+    {
+      "if": {"Q5": "biegla", "Q2": "brak", "Q7": "do_25_lat"},
+      "then": {
+        "diagnosis": "Młody kandydat, u którego znajomość języka jest jedynym atutem.",
+        "action": "Złóż aplikacje do korporacji międzynarodowych (typu BPO/SSC), tam na stanowiska entry-level często wystarczy sam płynny angielski."
+      }
+    },
+    {
+      "if": {"Q9": "podstawowe", "Q10": "tak", "Q2": "krotkie"},
+      "then": {
+        "diagnosis": "Uniwersalny kandydat bez wąskiej specjalizacji, ale z dużą dyspozycyjnością.",
+        "action": "Szukaj pracy w rozwijających się branżach e-commerce i na magazynach. Z komputerem i systemem zmianowym bez problemu tam wejdziesz."
+      }
+    },
+    {
+      "if": {"Q7": "50_plus", "Q1": "wyzsze", "Q6": "minimalne"},
+      "then": {
+        "diagnosis": "Zaniżanie lotów z powodu braku pewności siebie u kandydata po 50. roku życia.",
+        "action": "Twój dyplom i lata życia to kapitał, a nie przeszkoda. Nie aplikuj na stanowiska niewymagające kwalifikacji, bo będziesz przez rekruterów odrzucany za 'overqualification'."
+      }
+    },
+    {
+      "if": {"Q8": "codziennie", "Q4": "nie", "Q3": "male_miasto", "Q1": "wyzsze"},
+      "then": {
+        "diagnosis": "Wypalenie rekrutacyjne wysoce zmotywowanej osoby na za małym rynku.",
+        "action": "Niestety, rynek w małym mieście nie wchłonie Twojego wyższego wykształcenia. Zmień nastawienie do relokacji lub szukaj pracy zdalnej."
+      }
+    },
+    {
+      "if": {"Q1": "branzowe", "Q9": "brak", "Q7": "do_25_lat"},
+      "then": {
+        "diagnosis": "Młody specjalista techniczny niedopasowany do idei Przemysłu 4.0.",
+        "action": "W nowoczesnym przemyśle (np. obsługa maszyn CNC, PLC) musisz obsługiwać komputer. Nadrobisz to w miesiąc, zacznij od zaraz."
+      }
+    },
+    {
+      "if": {"Q2": "dlugie", "Q3": "wies", "Q5": "podstawowa", "Q4": "tak"},
+      "then": {
+        "diagnosis": "Doświadczony kandydat, wybitnie mobilny, lecz zablokowany brakiem języków na arenie międzynarodowej.",
+        "action": "Skup się na stanowiskach jako technik serwisowy lub przedstawiciel handlowy na rynek krajowy, gdzie Twoja mobilność to największy atut."
+      }
+    },
+    {
+      "if": {"Q6": "wysokie", "Q9": "podstawowe", "Q7": "26_49_lat"},
+      "then": {
+        "diagnosis": "Zbyt wysokie wymagania finansowe w stosunku do posiadanych kompetencji twardych (cyfrowych).",
+        "action": "Chcesz zarabiać jak specjalista – musisz operować na narzędziach specjalisty. Zainwestuj czas w zaawansowane kursy programowania lub analityki."
+      }
+    },
+    {
+      "if": {"Q1": "srednie", "Q2": "brak", "Q5": "biegla", "Q8": "rzadko"},
+      "then": {
+        "diagnosis": "Słomiany zapał u kandydata o dużym potencjale komunikacyjnym.",
+        "action": "Masz świetny atut (język angielski), ale niska aktywność to zabija. Zaplanuj godzinę dziennie na wysyłanie CV."
+      }
+    },
+    {
+      "if": {"Q10": "nie", "Q8": "codziennie", "Q1": "podstawowe"},
+      "then": {
+        "diagnosis": "Zdeterminowany kandydat, ale mocno ograniczony życiowo (edukacyjnie i czasowo).",
+        "action": "Poszukaj prac w 100% na jedną zmianę (np. proste prace produkcyjne, budowlanka w ciągu dnia) lub sprawdź możliwości wsparcia z urzędu gminy."
+      }
+    }
+  ]
+}
